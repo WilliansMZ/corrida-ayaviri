@@ -1,102 +1,168 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="font-serif bg-white text-red-900">
+      {/* Hero Section */}
+      <section
+        className="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/PlazadeAyaviri (1).jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/50"></div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-white px-4"
+        >
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-4 drop-shadow-lg">
+            ¡Gran Corrida de Toros en Ayaviri!
+          </h1>
+          <p className="text-lg sm:text-2xl mb-6">
+            13 de septiembre – Fiesta en honor a la Virgen de Altagracia
+          </p>
+          <p className="max-w-2xl mx-auto text-base sm:text-lg">
+            Una tarde de tradición, cultura y alegría que une a nuestro pueblo.
+          </p>
+        </motion.div>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Figuras del Ruedo */}
+      <section className="py-20 bg-white text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-red-700 mb-12">
+          Figuras del Ruedo
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+          {["David Martínez", "Samuel Calderón", "Cristina Ramos"].map(
+            (name, i) => (
+              <Card
+                key={i}
+                className="rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform"
+              >
+                <CardContent className="p-4">
+                  <img
+                    src={`/images/matador-${i + 1}.jpg`}
+                    alt={name}
+                    className="w-full h-64 sm:h-72 lg:h-80 object-cover rounded-xl"
+                  />
+                  <h3 className="text-xl sm:text-2xl mt-4 font-semibold">
+                    {name}
+                  </h3>
+                </CardContent>
+              </Card>
+            )
+          )}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Novilleros */}
+      <section className="py-20 bg-red-50 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-red-700 mb-12">
+          Novilleros
+        </h2>
+        <p className="max-w-2xl mx-auto mb-8 text-base sm:text-lg px-4">
+          Jóvenes promesas que se lucirán en la arena con todo su valor.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto px-4">
+          {[
+            { name: "Antony Barra", img: "/images/novillero-1.jpg" },
+            { name: "Albert Chui", img: "/images/novillero-2.jpg" },
+          ].map((novillero, i) => (
+            <Card
+              key={i}
+              className="rounded-2xl bg-white shadow-lg overflow-hidden hover:scale-105 transition-transform"
+            >
+              <CardContent className="p-4">
+                <img
+                  src={novillero.img}
+                  alt={novillero.name}
+                  className="w-full h-64 object-cover rounded-xl"
+                />
+                <h3 className="text-xl font-semibold text-red-600 mt-4">
+                  {novillero.name}
+                </h3>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Ganaderías */}
+      <section className="py-20 bg-white text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-red-700 mb-12">
+          Ganaderías Invitadas
+        </h2>
+        <p className="max-w-3xl mx-auto mb-8 text-base sm:text-lg px-4">
+          Desde nuestros campos llegan los mejores ejemplares para esta gran
+          fiesta taurina.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
+          {["Checayani", "Rural Alianza", "Las Nieves", "Las Mercedes de Cupi"].map(
+            (name, i) => (
+              <Card
+                key={i}
+                className="rounded-2xl shadow-md overflow-hidden hover:scale-105 transition-transform"
+              >
+                <CardContent className="p-4">
+                  <img
+                    src={`/images/ganaderia-${i + 1}.jpg`}
+                    alt={name}
+                    className="w-full h-48 object-cover rounded-xl"
+                  />
+                  <h3 className="text-lg sm:text-xl font-semibold mt-4">
+                    {`Ganadería ${name}`}
+                  </h3>
+                </CardContent>
+              </Card>
+            )
+          )}
+        </div>
+      </section>
+
+      {/* Buffos */}
+      <section className="py-20 bg-yellow-100 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-red-700 mb-8">
+          Buffos
+        </h2>
+        <p className="text-base sm:text-lg max-w-2xl mx-auto mb-6 px-4">
+          La alegría y las risas estarán aseguradas con{" "}
+          <span className="font-bold">Los Reyes del Ruedo de Ayacucho</span>,
+          acompañados por las vacas de Santiago.
+        </p>
+        <img
+          src="/images/buffos.jpeg"
+          alt="Buffos"
+          className="mx-auto w-56 sm:w-64 md:w-80 rounded-xl shadow-lg"
+        />
+      </section>
+
+      {/* Invitación final */}
+      <section className="py-20 bg-red-700 text-white text-center px-4">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+          ¡Te esperamos en la Plaza de Toros de Ayaviri!
+        </h2>
+        <p className="max-w-2xl mx-auto text-base sm:text-lg mb-6">
+          Ven con tu familia y amigos a vivir la emoción de nuestra fiesta en
+          honor a la Virgen de Altagracia.  
+          Una tradición que late en el corazón del pueblo.
+        </p>
+        <p className="text-lg font-semibold">📅 13 de septiembre de 2025</p>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black text-white py-10 text-center px-4">
+        <p className="mb-4">Contacto: info@corridadetorosayaviri.com</p>
+        <div className="flex justify-center gap-6 mb-4">
+          <a href="#" className="hover:text-red-500">Facebook</a>
+          <a href="#" className="hover:text-red-500">Instagram</a>
+          <a href="#" className="hover:text-red-500">WhatsApp</a>
+        </div>
+        <p className="text-sm">
+          © 2025 Fiesta Taurina Ayaviri – En honor a la Virgen de Altagracia
+        </p>
       </footer>
     </div>
   );
