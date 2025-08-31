@@ -89,10 +89,28 @@ export default function Home() {
   ];
 
   return (
+
+    
     <div className="font-serif bg-white text-red-900">
+      {/* Header */}
+      <header className="fixed top-0 left-0 w-full bg-black/70 backdrop-blur-md text-white z-50 shadow-md">
+        <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+          <h1 className="text-lg sm:text-xl font-bold tracking-wide">
+            Fiesta Taurina Ayaviri 2025
+          </h1>
+          <nav className="hidden sm:flex gap-6 text-sm">
+            <a href="#toreros" className="hover:text-red-400 transition-colors">Toreros</a>
+            <a href="#novilleros" className="hover:text-red-400 transition-colors">Novilleros</a>
+            <a href="#ganaderias" className="hover:text-red-400 transition-colors">Ganaderías</a>
+            <a href="#programa" className="hover:text-red-400 transition-colors">Programa</a>
+            <a href="#buffos" className="hover:text-red-400 transition-colors">Buffos</a>
+          </nav>
+        </div>
+      </header>
       {/* HERO */}
       <section
-        className="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center"
+        id="hero"
+        className="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center pt-20"
         style={{ backgroundImage: "url('/images/PlazadeAyaviri (1).jpg')" }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
@@ -401,18 +419,11 @@ export default function Home() {
 
 
       {/* Footer */}
-      <footer className="bg-black text-white py-10 text-center px-4">
-        <p className="mb-4">Contacto: info@corridadetorosayaviri.com</p>
-        <div className="flex justify-center gap-6 mb-4">
-          <a href="#" className="hover:text-red-500">Facebook</a>
-          <a href="#" className="hover:text-red-500">Instagram</a>
-          <a href="#" className="hover:text-red-500">WhatsApp</a>
-        </div>
-        <p className="text-sm">
-          © 2025 Fiesta Taurina Ayaviri – En honor a la Virgen de Altagracia
-        </p>
-      </footer>
-
+<footer className="bg-black text-white py-6 text-center px-4">
+  <p className="text-xs text-gray-400">
+    © 2025 Fiesta Taurina Ayaviri – En honor a la Virgen de Altagracia
+  </p>
+</footer>
 
 
       {/* Modal de Biografía */}
