@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { X, Trophy } from 'lucide-react';
+import { X, Trophy } from "lucide-react";
 
 // Define el tipo Torero
 interface Torero {
@@ -75,25 +75,24 @@ export default function Home() {
     },
   ];
 
-
   const novilleros = [
     {
       name: "Antony Barra",
       img: "/images/novillero-1.jpg",
-      descripcion: "Promesa del toreo nacional con gran proyección internacional."
+      descripcion: "Promesa del toreo nacional con gran proyección internacional.",
     },
     {
       name: "Albert Chui",
       img: "/images/novillero-2.jpg",
-      descripcion: "Joven torero con técnica excepcional y gran temple."
-    }
+      descripcion: "Joven torero con técnica excepcional y gran temple.",
+    },
   ];
 
   const ganaderias = [
     { name: "Checayani", image: "/images/ganaderia-1.jpg" },
     { name: "Rural Alianza", image: "/images/ganaderia-2.jpg" },
     { name: "Las Nieves", image: "/images/ganaderia-3.jpg" },
-    { name: "Las Mercedes de Cupi", image: "/images/ganaderia-4.jpg" }
+    { name: "Las Mercedes de Cupi", image: "/images/ganaderia-4.jpg" },
   ];
 
   return (
@@ -128,9 +127,9 @@ export default function Home() {
           Figuras del Ruedo
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-          {toreros.map((torero, i) => (
+          {toreros.map((torero) => (
             <Card
-              key={i}
+              key={torero.id}
               className="rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer"
               onClick={() => setSelectedTorero(torero)}
             >
@@ -174,7 +173,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-red-600 mt-4">
                   {novillero.name}
                 </h3>
-                <p className="text-sm text-gray-600 mt-2">{novillero.descripcion}</p>
+                <p className="text-sm text-gray-700 mt-2">{novillero.descripcion}</p>
               </CardContent>
             </Card>
           ))}
