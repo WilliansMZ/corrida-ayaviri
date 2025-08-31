@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
-import { X, Trophy } from "lucide-react";
+import { X, Trophy } from 'lucide-react';
 
 // Define el tipo Torero
 interface Torero {
@@ -75,24 +75,25 @@ export default function Home() {
     },
   ];
 
+
   const novilleros = [
     {
       name: "Antony Barra",
       img: "/images/novillero-1.jpg",
-      descripcion: "Promesa del toreo nacional con gran proyección internacional.",
+      descripcion: "Promesa del toreo nacional con gran proyección internacional."
     },
     {
       name: "Albert Chui",
       img: "/images/novillero-2.jpg",
-      descripcion: "Joven torero con técnica excepcional y gran temple.",
-    },
+      descripcion: "Joven torero con técnica excepcional y gran temple."
+    }
   ];
 
   const ganaderias = [
     { name: "Checayani", image: "/images/ganaderia-1.jpg" },
     { name: "Rural Alianza", image: "/images/ganaderia-2.jpg" },
     { name: "Las Nieves", image: "/images/ganaderia-3.jpg" },
-    { name: "Las Mercedes de Cupi", image: "/images/ganaderia-4.jpg" },
+    { name: "Las Mercedes de Cupi", image: "/images/ganaderia-4.jpg" }
   ];
 
   return (
@@ -127,9 +128,9 @@ export default function Home() {
           Figuras del Ruedo
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-          {toreros.map((torero) => (
+          {toreros.map((torero, i) => (
             <Card
-              key={torero.id}
+              key={i}
               className="rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform cursor-pointer"
               onClick={() => setSelectedTorero(torero)}
             >
@@ -173,7 +174,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-red-600 mt-4">
                   {novillero.name}
                 </h3>
-                <p className="text-sm text-gray-700 mt-2">{novillero.descripcion}</p>
+                <p className="text-sm text-gray-600 mt-2">{novillero.descripcion}</p>
               </CardContent>
             </Card>
           ))}
@@ -210,6 +211,212 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Programa del Evento */}
+      <section className="py-20 bg-gradient-to-br from-red-50 to-yellow-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-red-700 mb-12 text-center">
+            Programa Oficial
+          </h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Viernes 12 de septiembre */}
+            <Card className="rounded-2xl shadow-lg overflow-hidden bg-white">
+              <CardContent className="p-6">
+                <div className="bg-red-700 text-white p-4 -m-6 mb-6 rounded-t-2xl">
+                  <h3 className="text-2xl font-bold text-center">
+                    Viernes 12 de septiembre 2025
+                  </h3>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold min-w-fit">
+                      6:00 p.m.
+                    </div>
+                    <p className="text-gray-700">
+                      Recepción de invitados y familiares en la Av. Mariscal Castilla N° 167, 
+                      local de eventos <span className="font-bold text-red-700">&quot;KOLLPAPATA&quot;</span>.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold min-w-fit">
+                      8:00 p.m.
+                    </div>
+                    <p className="text-gray-700">
+                      Tradicional toro <span className="font-bold text-red-700">VELAKUY</span> 
+                      en el ruedo de toros Lucho Coronado.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Sábado 13 de septiembre */}
+            <Card className="rounded-2xl shadow-lg overflow-hidden bg-white">
+              <CardContent className="p-6">
+                <div className="bg-yellow-600 text-white p-4 -m-6 mb-6 rounded-t-2xl">
+                  <h3 className="text-2xl font-bold text-center">
+                    Sábado 13 de septiembre 2025
+                  </h3>
+                </div>
+                
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-start gap-2">
+                    <div className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-semibold min-w-fit">
+                      5:00 a.m.
+                    </div>
+                    <p className="text-gray-700">
+                      Alba de 21 &quot;camaretazos&quot; en el cerro Kolqueparque.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <div className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-semibold min-w-fit">
+                      6:00 a.m.
+                    </div>
+                    <p className="text-gray-700">
+                      Desayuno ofrecido por los Alferados 2025.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <div className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-semibold min-w-fit">
+                      7:00 a.m.
+                    </div>
+                    <p className="text-gray-700">
+                      Solemne misa de la tercera tarde taurina, celebrada en la catedral San Francisco de Asís.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <div className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-semibold min-w-fit">
+                      8:00 a.m.
+                    </div>
+                    <p className="text-gray-700">
+                      Recepción de invitados, familiares, autoridades y pueblo en general en el local &quot;KOLLPAPATA&quot;.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <div className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-semibold min-w-fit">
+                      11:30 a.m.
+                    </div>
+                    <p className="text-gray-700">
+                      Almuerzo ofrecido por los Alferados 2025.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <div className="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold min-w-fit">
+                      12:30 p.m.
+                    </div>
+                    <p className="text-gray-700 font-medium">
+                      Entrada de la tercera tarde taurina a la plaza de toros Lucho Coronado, 
+                      con tradicional paseo de &quot;enjalmas&quot;.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <div className="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold min-w-fit">
+                      1:00 p.m.
+                    </div>
+                    <p className="text-gray-700 font-bold">
+                      🎯 Inicio de la tercera tarde taurina.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <div className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-semibold min-w-fit">
+                      3:30 p.m.
+                    </div>
+                    <p className="text-gray-700">
+                      Entrega de cargo al nuevo alferado 2026.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <div className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-semibold min-w-fit">
+                      5:30 p.m.
+                    </div>
+                    <p className="text-gray-700">
+                      Final de la tarde taurina y entrega de escapularios.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <div className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-semibold min-w-fit">
+                      6:30 p.m.
+                    </div>
+                    <p className="text-gray-700">
+                      &quot;Kacharparti&quot;.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <div className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs font-semibold min-w-fit">
+                      7:00 p.m.
+                    </div>
+                    <p className="text-gray-700">
+                      🎉 Gran Remate bailable a la usanza ayavireña en el local de KOLLPAPATA.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-lg text-red-700 font-semibold bg-white px-6 py-3 rounded-full shadow-md inline-block">
+              📍 Plaza de Toros "Lucho Coronado" - Ayaviri
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Buffos */}
+      <section className="py-20 bg-yellow-100 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-red-700 mb-8">
+          Buffos
+        </h2>
+        <p className="text-base sm:text-lg max-w-2xl mx-auto mb-6 px-4">
+          La alegría y las risas estarán aseguradas con{" "}
+          <span className="font-bold">Los Reyes del Ruedo de Ayacucho</span>,
+          acompañados por las vacas de Santiago.
+        </p>
+        <img
+          src="/images/buffos.jpeg"
+          alt="Buffos"
+          className="mx-auto w-56 sm:w-64 md:w-80 rounded-xl shadow-lg"
+        />
+      </section>
+
+      {/* Invitación final */}
+      <section className="py-20 bg-red-700 text-white text-center px-4">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+          ¡Te esperamos en la Plaza de Toros de Ayaviri!
+        </h2>
+        <p className="max-w-2xl mx-auto text-base sm:text-lg mb-6">
+          Ven con tu familia y amigos a vivir la emoción de nuestra fiesta en
+          honor a la Virgen de Altagracia.  
+          Una tradición que late en el corazón del pueblo.
+        </p>
+        <p className="text-lg font-semibold">📅 13 de septiembre de 2025</p>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black text-white py-10 text-center px-4">
+        <p className="mb-4">Contacto: info@corridadetorosayaviri.com</p>
+        <div className="flex justify-center gap-6 mb-4">
+          <a href="#" className="hover:text-red-500">Facebook</a>
+          <a href="#" className="hover:text-red-500">Instagram</a>
+          <a href="#" className="hover:text-red-500">WhatsApp</a>
+        </div>
+        <p className="text-sm">
+          © 2025 Fiesta Taurina Ayaviri – En honor a la Virgen de Altagracia
+        </p>
+      </footer>
+
       {/* Modal de Biografía */}
       <AnimatePresence>
         {selectedTorero && (
@@ -225,7 +432,7 @@ export default function Home() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto font-serif"
-              onClick={(e) => e.stopPropagation()}
+              onClick={e => e.stopPropagation()}
             >
               <div className="relative">
                 <button
@@ -234,7 +441,7 @@ export default function Home() {
                 >
                   <X size={20} />
                 </button>
-
+                
                 <div className="p-6">
                   <div className="flex flex-col md:flex-row gap-6">
                     <div className="md:w-1/3">
@@ -244,7 +451,7 @@ export default function Home() {
                         className="w-full rounded-xl object-cover"
                       />
                     </div>
-
+                    
                     <div className="md:w-2/3">
                       <h3 className="text-3xl font-bold text-red-800 mb-2">
                         🎴 {selectedTorero.name}
@@ -252,28 +459,23 @@ export default function Home() {
                       <p className="text-red-600 font-semibold mb-4 text-lg">
                         {selectedTorero.especialidad}
                       </p>
-
+                      
                       {selectedTorero.nombreCompleto && (
                         <p className="text-sm mb-2">
-                          <span className="font-semibold text-red-700">
-                            Nombre completo:
-                          </span>{" "}
-                          {selectedTorero.nombreCompleto}
+                          <span className="font-semibold text-red-700">Nombre completo:</span> {selectedTorero.nombreCompleto}
                         </p>
                       )}
-
+                      
                       {selectedTorero.apodo && (
                         <p className="text-sm mb-2">
-                          <span className="font-semibold text-red-700">Apodo:</span>{" "}
-                          {selectedTorero.apodo}
+                          <span className="font-semibold text-red-700">Apodo:</span> {selectedTorero.apodo}
                         </p>
                       )}
-
+                      
                       <p className="text-sm mb-3">
-                        <span className="font-semibold text-red-700">Nacimiento:</span>{" "}
-                        {selectedTorero.nacimiento}
+                        <span className="font-semibold text-red-700">Nacimiento:</span> {selectedTorero.nacimiento}
                       </p>
-
+                      
                       <div className="space-y-4">
                         <div>
                           <h4 className="text-lg font-bold text-red-800 mb-2">
@@ -283,21 +485,25 @@ export default function Home() {
                             {selectedTorero.estilo}
                           </p>
                         </div>
-
+                        
                         <div>
                           <h4 className="text-lg font-bold text-red-800 mb-2">
                             🎓 Formación
                           </h4>
-                          <p className="text-sm text-gray-700">{selectedTorero.formacion}</p>
+                          <p className="text-sm text-gray-700">
+                            {selectedTorero.formacion}
+                          </p>
                         </div>
-
+                        
                         <div>
                           <h4 className="text-lg font-bold text-red-800 mb-2">
                             🌎 Trayectoria
                           </h4>
-                          <p className="text-sm text-gray-700">{selectedTorero.trayectoria}</p>
+                          <p className="text-sm text-gray-700">
+                            {selectedTorero.trayectoria}
+                          </p>
                         </div>
-
+                        
                         <div>
                           <h4 className="text-lg font-bold text-red-800 mb-2 flex items-center">
                             <Trophy className="mr-2" size={18} />
@@ -312,12 +518,14 @@ export default function Home() {
                             ))}
                           </ul>
                         </div>
-
+                        
                         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded-r-lg">
                           <h4 className="text-lg font-bold text-red-800 mb-1">
                             💡 Tip para el aficionado
                           </h4>
-                          <p className="text-sm text-gray-700 italic">{selectedTorero.tip}</p>
+                          <p className="text-sm text-gray-700 italic">
+                            {selectedTorero.tip}
+                          </p>
                         </div>
                       </div>
                     </div>
