@@ -62,7 +62,7 @@ export default function Home() {
       image: "/images/matador-3.jpg",
       especialidad: "Novillero/Matador de Toros (Perú, Macusani)",
       nombreCompleto: "Cristhian Ramos Hancco",
-      apodo: "\"El Niño de Macusani\"",
+      apodo: "&quot;El Niño de Macusani&quot;",
       nacimiento: "Macusani, Puno, Perú",
       estilo: "Joven, valiente y decidido, con buena conexión con el público local",
       formacion: "Universidad Nacional del Altiplano de Puno",
