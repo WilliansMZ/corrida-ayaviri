@@ -361,7 +361,7 @@ export default function Home() {
          
           <div className="text-center mt-8">
             <p className="text-lg text-red-700 font-semibold bg-white px-6 py-3 rounded-full shadow-md inline-block">
-              📍 Plaza de Toros "Lucho Coronado" - Ayaviri
+              📍 Plaza de Toros Lucho Coronado - Ayaviri
             </p>
           </div>
         </div>
