@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { X, Trophy } from "lucide-react";
 
-// Define el tipo Torero
+// Tipo de datos para los toreros
 interface Torero {
   id: number;
   name: string;
@@ -24,6 +24,7 @@ interface Torero {
 export default function Home() {
   const [selectedTorero, setSelectedTorero] = useState<Torero | null>(null);
 
+  // === DATA ===
   const toreros: Torero[] = [
     {
       id: 1,
@@ -76,16 +77,8 @@ export default function Home() {
   ];
 
   const novilleros = [
-    {
-      name: "Antony Barra",
-      img: "/images/novillero-1.jpg",
-      descripcion: "Promesa del toreo nacional con gran proyección internacional.",
-    },
-    {
-      name: "Albert Chui",
-      img: "/images/novillero-2.jpg",
-      descripcion: "Joven torero con técnica excepcional y gran temple.",
-    },
+    { name: "Antony Barra", img: "/images/novillero-1.jpg", descripcion: "Promesa del toreo nacional con gran proyección internacional." },
+    { name: "Albert Chui", img: "/images/novillero-2.jpg", descripcion: "Joven torero con técnica excepcional y gran temple." },
   ];
 
   const ganaderias = [
@@ -97,7 +90,7 @@ export default function Home() {
 
   return (
     <div className="font-serif bg-white text-red-900">
-      {/* Hero Section */}
+      {/* HERO */}
       <section
         className="relative h-screen flex flex-col justify-center items-center text-center bg-cover bg-center"
         style={{ backgroundImage: "url('/images/PlazadeAyaviri (1).jpg')" }}
