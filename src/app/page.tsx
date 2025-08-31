@@ -234,7 +234,7 @@ export default function Home() {
                     </div>
                     <p className="text-gray-700">
                       Recepción de invitados y familiares en la Av. Mariscal Castilla N° 167, 
-                      local de eventos <span className="font-bold text-red-700">"KOLLPAPATA"</span>.
+                      local de eventos <span className="font-bold text-red-700">&quot;KOLLPAPATA&quot;</span>.
                     </p>
                   </div>
                   
@@ -266,7 +266,7 @@ export default function Home() {
                       5:00 a.m.
                     </div>
                     <p className="text-gray-700">
-                      Alba de 21 "camaretazos" en el cerro Kolqueparque.
+                      Alba de 21 &quot;camaretazos&quot; en el cerro Kolqueparque.
                     </p>
                   </div>
                   
@@ -293,7 +293,7 @@ export default function Home() {
                       8:00 a.m.
                     </div>
                     <p className="text-gray-700">
-                      Recepción de invitados, familiares, autoridades y pueblo en general en el local "KOLLPAPATA".
+                      Recepción de invitados, familiares, autoridades y pueblo en general en el local &quot;KOLLPAPATA&quot;.
                     </p>
                   </div>
                   
@@ -312,7 +312,7 @@ export default function Home() {
                     </div>
                     <p className="text-gray-700 font-medium">
                       Entrada de la tercera tarde taurina a la plaza de toros Lucho Coronado, 
-                      con tradicional paseo de "enjalmas".
+                      con tradicional paseo de &quot;enjalmas&quot;.
                     </p>
                   </div>
                   
@@ -348,7 +348,7 @@ export default function Home() {
                       6:30 p.m.
                     </div>
                     <p className="text-gray-700">
-                      "Kacharparti".
+                      &quot;Kacharparti&quot;.
                     </p>
                   </div>
                   
