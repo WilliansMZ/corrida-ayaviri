@@ -5,8 +5,24 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
 import { X, Trophy } from 'lucide-react';
 
+// Define the torero type
+interface Torero {
+  id: number;
+  name: string;
+  image: string;
+  especialidad: string;
+  nacimiento: string;
+  estilo: string;
+  formacion: string;
+  trayectoria: string;
+  logros: string[];
+  tip: string;
+  nombreCompleto?: string;
+  apodo?: string;
+}
+
 export default function Home() {
-  const [selectedTorero, setSelectedTorero] = useState(null);
+  const [selectedTorero, setSelectedTorero] = useState<Torero | null>(null);
 
   const toreros = [
     {
