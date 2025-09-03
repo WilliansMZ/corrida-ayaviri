@@ -47,7 +47,7 @@ export default function Home() {
       image: "/images/matador-2.jpg",
       especialidad: "Matador de Toros (Perú, Lima)",
       nombreCompleto: "Brayan Samuel Calderón Serna",
-      nacimiento: "Apurímac, Perú",
+      nacimiento: "Lima, Perú",
       estilo: "Técnico y valiente, con entrega total",
       formacion: "Escuela Taurina de Acho, alternativa en Chalhuanca (2023)",
       trayectoria: "Ha participado en ferias de Perú, Colombia, México y Ecuador",
